@@ -23,14 +23,14 @@ jobs:
           password: ${{secrets.GH_MANAGE_PKG}}
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M')"
+        run: echo "date=date::$(date +'%Y-%m-%d-%H-%M')" >> "$GITHUB_OUTPUT"
       - name: build-push
         uses: docker/build-push-action@v5
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ github.event.repository.updated_at}}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
+          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ steps.date.outputs.date }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
   
 
       
