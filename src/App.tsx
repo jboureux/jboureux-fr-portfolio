@@ -14,7 +14,7 @@ function App() {
         </CardHeader>
         <CardContent>
           <span className='flex flex-row'>
-            <TriangleAlert className='mr-2'/> Ce site web est en cours de maintenanc.
+            <TriangleAlert className='mr-2'/> Ce site web est en cours de maintenance.
           </span>
         </CardContent>
       </Card>
