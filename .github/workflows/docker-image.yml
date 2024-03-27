@@ -13,7 +13,7 @@ jobs:
       run: docker login --username jboureux --password ${{secrets.GH_MANAGE_PKG}} ghcr.io
 
     - name: Build Image
-      run: docker build . --tag jboureux-fr-portfolio:$(date +%s)
+      run: docker build . --tag ghcr.io/jboureux/jboureux-fr-portfolio:$(date +%s)
 
     - name: Publish to GHCR
       run: docker push ghcr.io/jboureux/jboureux-fr-portfolio --all-tags
