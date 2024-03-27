@@ -30,7 +30,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ steps.date.output.date }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
+          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ github.event.repository.updated_at}}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
   
 
       
