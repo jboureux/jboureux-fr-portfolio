@@ -12,7 +12,7 @@ RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 
 # Construire l'application
-RUN npm run build
+RUN pnpm run build
 
 # Utiliser une image légère pour le déploiement
 FROM nginx:alpine
