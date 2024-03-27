@@ -5,15 +5,12 @@ on:
     branches: [ "master" ]
 
 jobs:
-
   build_and_publish:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        echo ${{secrets.GH_MANAGE_PKG}} | docker login --username jboureux --password-stdin 
+        echo ${{secrets.GH_MANAGE_PKG}} | docker login --username jboureux --password-stdin ghcr.io
         docker build . --tag jboureux-fr-portfolio:$(date +%s)
         docker push ghcr.io/jboureux/jboureux-fr-portfolio:$(date +%s)
