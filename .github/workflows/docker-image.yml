@@ -29,7 +29,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ steps.build-push.env.Tag }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
+          tags: ${{ env.Tag }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
   
 
       
