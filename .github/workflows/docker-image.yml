@@ -23,11 +23,13 @@ jobs:
           password: ${{secrets.GH_MANAGE_PKG}}
       - name: Build and push
         uses: docker/build-push-action@v5
+        env:
+          date: $(date +%s)
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jboureux/jboureux-fr-portfolio:$(date +%s), ghcr.io/jboureux/jboureux-fr-portfolio:latest
+          tags: ghcr.io/jboureux/jboureux-fr-portfolio:$date, ghcr.io/jboureux/jboureux-fr-portfolio:latest
   
 
       
