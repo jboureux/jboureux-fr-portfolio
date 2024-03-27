@@ -21,15 +21,16 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{secrets.GH_MANAGE_PKG}}
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M')"
       - name: build-push
         uses: docker/build-push-action@v5
-        env:
-          Tag: $(date +%s)
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ env.Tag }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
+          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ steps.date.output.date }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
   
 
       
