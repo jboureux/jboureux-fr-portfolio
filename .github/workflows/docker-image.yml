@@ -24,12 +24,12 @@ jobs:
       - name: build-push
         uses: docker/build-push-action@v5
         env:
-          Tag: ghcr.io/jboureux/jboureux-fr-portfolio:$(date +%s)
+          Tag: $(date +%s)
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ env.Tag }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
+          tags: ghcr.io/jboureux/jboureux-fr-portfolio:${{ env.Tag }}, ghcr.io/jboureux/jboureux-fr-portfolio:latest
   
 
       
