@@ -1,4 +1,4 @@
-import { CareerElement } from "@/schemas/career";
+import { CareerElement } from "@/schemas/career-element";
 
 export const carrer: CareerElement[] = [
     {
