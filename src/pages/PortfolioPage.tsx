@@ -76,7 +76,7 @@ const PortfolioPage = () => {
                     </h2>
                     <h2 className="relative leading-snug w-fit tracking-wide text-balance mb-8 text-gray-700 text-xl md:text-2xl">
                         Tu as une idée et tu as besoin d'un développeur web ?
-                        N'hésites pas à prendre contacte avec moi tous mes liens
+                        N'hésites pas à prendre contact avec moi tous mes liens
                         sont là !
                     </h2>
                 </div>
