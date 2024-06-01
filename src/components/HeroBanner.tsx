@@ -19,7 +19,7 @@ const HeroBanner = () => {
 
             <ScrollToElement
                 targetId="career"
-                className="group w-[350px] flex flex-col items-center justify-center absolute bottom-14"
+                className="group w-[350px] flex flex-col items-center justify-center absolute md:bottom-14 max-md:top-14"
             >
                 <p className="h-fit text-center text-gray-900 text-xl md:text-2xl tracking-normal transition-all ease-in-out group-hover:tracking-widest transform group-hover:scale-110 duration-500">
                     Voir mon portfolio
