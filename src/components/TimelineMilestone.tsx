@@ -6,19 +6,12 @@ interface TimelineMilestoneProps {
     item: CareerElement;
     previous: boolean;
     next: boolean;
-    width?: number;
 }
 
 const TimelineMilestone = (props: TimelineMilestoneProps) => {
-    const width = props.width ? props.width : 350;
-    const height = Math.ceil(width / 3);
-
-    console.log(
-        `width: ${width}, height: ${height}, previous: ${props.previous}, next: ${props.next}`
-    );
     return (
-        <div className={`min-w-[${width}px] flex flex-col items-center`}>
-            <div className={`h-[${height}px]`}>
+        <div className="w-[350px] flex flex-col items-center">
+            <div className="h-[100px]">
                 <p className="tracking-tight text-xl font-semibold text-center">
                     {props.item.label}
                 </p>
