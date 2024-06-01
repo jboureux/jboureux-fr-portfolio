@@ -27,8 +27,8 @@ const ProjectCard = (props: ProjectCardProps) => {
             </CardContent>
             <CardFooter>
                 <div className="flex flex-row flex-wrap gap-1">
-                    {props.project.tags.map((tag) => (
-                        <Badge>{tag}</Badge>
+                    {props.project.tags.map((tag, index) => (
+                        <Badge key={index}>{tag}</Badge>
                     ))}
                 </div>
             </CardFooter>

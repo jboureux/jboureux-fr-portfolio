@@ -2,7 +2,7 @@ import HeroBanner from "@/components/HeroBanner";
 import LanguageCard from "@/components/LanguageCard";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProjectCard from "@/components/ProjectCard";
-import WorkInProgress from "@/components/WorkInProgress";
+import Timeline from "@/components/Timeline";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -22,8 +22,12 @@ const PortfolioPage = () => {
                     >
                         Mon parcours
                     </h2>
+                    <h2 className="relative leading-snug w-fit tracking-wide text-balance mb-8 text-gray-700 text-xl md:text-2xl">
+                        Toutes les étapes de ma carrière depuis le baccalauréat
+                        !
+                    </h2>
                 </div>
-                <WorkInProgress />
+                <Timeline />
             </MaxWidthWrapper>
             <MaxWidthWrapper className="my-16">
                 <div className="relative mx-auto text-center flex flex-col items-center">
@@ -39,8 +43,8 @@ const PortfolioPage = () => {
                     </h2>
                 </div>
                 <div className="flex flex-col md:flex-row gap-8 md:gap-5 items-center md:items-start md:justify-around my-5">
-                    {languages.map((language) => (
-                        <LanguageCard item={language} />
+                    {languages.map((language, index) => (
+                        <LanguageCard key={index} item={language} />
                     ))}
                 </div>
             </MaxWidthWrapper>
@@ -59,8 +63,8 @@ const PortfolioPage = () => {
                 </div>
                 <ScrollArea>
                     <div className="flex flex-row gap-4 my-5">
-                        {projects.map((value) => {
-                            return <ProjectCard project={value} />;
+                        {projects.map((value, index) => {
+                            return <ProjectCard key={index} project={value} />;
                         })}
                     </div>
                     <ScrollBar orientation="horizontal" />

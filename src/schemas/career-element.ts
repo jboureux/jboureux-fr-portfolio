@@ -3,5 +3,9 @@ export interface CareerElement {
     date: Date;
     label: string;
     description?: string;
-    location: string;
+    location: {
+        name: string;
+        postalCode?: string;
+        city?: string;
+    };
 }
