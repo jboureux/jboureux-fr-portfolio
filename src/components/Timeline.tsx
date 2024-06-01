@@ -21,7 +21,7 @@ const Timeline = () => {
                     })}
                 </div>
 
-                <ScrollBar className="max-md:hidden" orientation="horizontal" />
+                <ScrollBar orientation="horizontal" />
             </ScrollArea>
         </>
     );
